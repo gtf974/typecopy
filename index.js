@@ -10,9 +10,17 @@ let getUrlParams = () => {
 
 let load = () => {
     let index = 0;
+    let isBroken = false;
     let interval = setInterval(() => {
-        main.textContent += defaultInput[index];
-        index++;
+        if(!isBroken){
+            if(main.offsetWidth < 80/100*window.innerWidth) main.textContent += defaultInput[index];
+            else {
+                shake();
+                isBroken = true;
+                isReady(true);
+            }
+            index++;
+        }
     }, 70);
     setTimeout(() => {
         clearInterval(interval);
