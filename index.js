@@ -77,7 +77,7 @@ window.addEventListener("keydown", e => {
 });
 
 document.addEventListener('copy', e => {
-    e.clipboardData.setData('text/plain', "https://typecopy.netlify.app?t="+main.textContent.replace(/ /g, "%20"));
+    e.clipboardData.setData('text/plain', "https://typecopy.netlify.app/?t="+main.textContent.replace(/ /g, "%20"));
     copied();
     e.preventDefault();
 });
