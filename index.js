@@ -1,5 +1,7 @@
 let isReady = false;
+let isCopying = false;
 let main = document.getElementById("main");
+let copiedBox = document.getElementById("copied");
 let defaultInput = "Type and Ctrl+C";
 
 let getUrlParams = () => {
@@ -41,6 +43,14 @@ let shake = () => {
 
 let copied = () => {
     main.style.color = "rgb(110, 214, 90)";
+    if(!isCopying){
+        isCopying = true;
+        copiedBox.style.opacity = 1;
+        setTimeout(() => {
+            copiedBox.style.opacity = 0;
+            isCopying = false;
+        }, 2000);
+    }
     setTimeout(() => {
         main.style.color = "white";
     }, 500);

@@ -3,6 +3,7 @@
     src: url('pixel.TTF') format('truetype');
 }
 
+
 body{
     margin: 0 auto;
     background-color: black;
@@ -13,6 +14,20 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    position: relative;
+}
+
+#copied{
+    position: absolute;
+    bottom:30px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    background: white;
+    padding: 10px;
+    color: black;
+    opacity: 0;
+    transition: opacity 0.2s;
 }
 
 #main{
