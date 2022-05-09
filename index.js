@@ -5,7 +5,7 @@ let defaultInput = "Type and Ctrl+C";
 let getUrlParams = () => {
     let url = new URL(window.location.href);
     let param = url.searchParams.get("t");
-    if(param) defaultInput = param.replace(/%20/g, " ").replace(/%99/g, "+");
+    if(param) defaultInput = param.replace(/%20/g, " ").replace(/:plus:/g, "+");
 };
 
 let load = () => {
@@ -86,7 +86,7 @@ window.addEventListener("keydown", e => {
 });
 
 document.addEventListener('copy', e => {
-    e.clipboardData.setData('text/plain', "https://typecopy.netlify.app/?t="+main.textContent.replace(/ /g, "%20").replace(/\+/g, "%99"));
+    e.clipboardData.setData('text/plain', "https://typecopy.netlify.app/?t="+main.textContent.replace(/ /g, "%20").replace(/\+/g, ":plus:"));
     copied();
     e.preventDefault();
 });
