@@ -4,7 +4,7 @@ let defaultInput = "Type and Ctrl+C";
 
 let getUrlParams = () => {
     let url = new URL(window.location.href);
-    let param = url.searchParams().get("t");
+    let param = url.searchParams.get("t");
     if(param) defaultInput = param.replace(/%20/g, " ");
 };
 
