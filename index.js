@@ -3,7 +3,8 @@ let main = document.getElementById("main");
 let defaultInput = "Type and Ctrl+C";
 
 let getUrlParams = () => {
-    let param = new URL(window.location.href).searchParams().get("t");
+    let url = new URL(window.location.href);
+    let param = url.searchParams().get("t");
     if(param) defaultInput = param.replace(/%20/g, " ");
 };
 
