@@ -1,8 +1,14 @@
 let isReady = false;
 let isCopying = false;
+let helpOn = false;
+let hasWritten = false;
 let main = document.getElementById("main");
 let copiedBox = document.getElementById("copied");
+let helpBox = document.getElementById("help-box");
+let helpButton = document.getElementById("help");
 let defaultInput = "Type and Ctrl+C";
+
+helpBox.style.width = 30/100*window.innerWidth+"px";
 
 let getUrlParams = () => {
     let url = new URL(window.location.href);
@@ -87,8 +93,13 @@ window.addEventListener("keydown", e => {
                 break;
             default:
                 if(isReady){
-                    if(main.offsetWidth < 80/100*window.innerWidth) main.textContent += e.key;
-                    else shake();
+                    if(!hasWritten){
+                        main.textContent = e.key;
+                        hasWritten = true;
+                    } else {
+                        if(main.offsetWidth < 80/100*window.innerWidth) main.textContent += e.key;
+                        else shake();
+                    }
                 }
                 break;
         }
@@ -99,4 +110,14 @@ document.addEventListener('copy', e => {
     e.clipboardData.setData('text/plain', "https://typecopy.netlify.app/?t="+main.textContent.replace(/ /g, "%20").replace(/\+/g, ":plus:")+"@end");
     copied();
     e.preventDefault();
+});
+
+helpButton.addEventListener("click", e => {
+    if(helpOn){
+        helpBox.style.visibility = "hidden";
+        helpOn = false;
+    } else {
+        helpBox.style.visibility = "visible";
+        helpOn = true;
+    }
 });
