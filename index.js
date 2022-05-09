@@ -92,8 +92,11 @@ window.addEventListener("keydown", e => {
             case "ArrowDown":
                 break;
             case "Backspace":
-                if(main.textContent.length > 0 && isReady){
-                    main.textContent = main.textContent.slice(0, -1);
+                if(!hasWritten){
+                    if(main.textContent.length > 0 && isReady) main.textContent = "";
+                    hasWritten = true;
+                } else {
+                    if(main.textContent.length > 0 && isReady) main.textContent = main.textContent.slice(0, -1);
                 }
                 break;
             default:
