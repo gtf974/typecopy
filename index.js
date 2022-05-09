@@ -11,7 +11,7 @@ let getUrlParams = () => {
 let load = () => {
     let index = 0;
     let interval = setInterval(() => {
-        main.innerHTML += defaultInput[index];
+        main.textContent += defaultInput[index];
         index++;
     }, 70);
     setTimeout(() => {
@@ -63,13 +63,13 @@ window.addEventListener("keydown", e => {
             case "ArrowDown":
                 break;
             case "Backspace":
-                if(main.innerHTML.length > 0 && isReady){
-                    main.innerHTML = main.innerHTML.slice(0, -1);
+                if(main.textContent.length > 0 && isReady){
+                    main.textContent = main.textContent.slice(0, -1);
                 }
                 break;
             default:
                 if(isReady){
-                    if(main.offsetWidth < 80/100*window.innerWidth) main.innerHTML += e.key;
+                    if(main.offsetWidth < 80/100*window.innerWidth) main.textContent += e.key;
                     else shake();
                 }
                 break;
