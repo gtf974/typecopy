@@ -13,7 +13,12 @@ helpBox.style.width = 30/100*window.innerWidth+"px";
 let getUrlParams = () => {
     let url = new URL(window.location.href);
     let param = url.searchParams.get("t");
-    if(param) defaultInput = param.replace(/%20/g, " ").replace(/:plus:/g, "+").replace(/@end/g, "");
+    if(param) defaultInput = param
+    .replace(/%20/g, " ")
+    .replace(/:plus:/g, "+")
+    .replace(/@supchev/g, ">")
+    .replace(/@subchev/g, "<")
+    .replace(/@end/g, "");
 };
 
 let load = () => {
@@ -107,7 +112,11 @@ window.addEventListener("keydown", e => {
 });
 
 document.addEventListener('copy', e => {
-    e.clipboardData.setData('text/plain', "https://typecopy.netlify.app/?t="+main.textContent.replace(/ /g, "%20").replace(/\+/g, ":plus:")+"@end");
+    e.clipboardData.setData('text/plain', "https://typecopy.netlify.app/?t="+main.textContent
+    .replace(/ /g, "%20")
+    .replace(/\+/g, ":plus:")
+    .replace(/>/g, "@supchev")
+    .replace(/</g, "@subchev")+"@end");
     copied();
     e.preventDefault();
 });
