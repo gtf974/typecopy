@@ -37,6 +37,7 @@ let copied = () => {
     }, 500);
 };
 
+getUrlParams();
 load();
 
 window.addEventListener("keydown", e => {
