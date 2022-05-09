@@ -19,7 +19,7 @@ let load = () => {
             else {
                 shake();
                 isBroken = true;
-                isReady(true);
+                isReady = true;
             }
             index++;
         }
