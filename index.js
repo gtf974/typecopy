@@ -136,6 +136,7 @@ main.addEventListener("click", e => {
 
 main.addEventListener('touchstart', function(e) {
   e.preventDefault();
+  main.click();
   let date = new Date();
   let time = date.getTime();
   const time_between_taps = 200;
@@ -146,8 +147,6 @@ main.addEventListener('touchstart', function(e) {
     .replace(/>/g, "@supchev")
     .replace(/</g, "@subchev")+"@end");
     copied();
-  } else {
-    main.click();
   }
   lastClick = time;
 })
