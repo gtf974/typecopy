@@ -169,9 +169,8 @@ input.addEventListener("input", e => {
             main.textContent = input.value;
             hasWritten = true;
         } else {
-            if(main.offsetWidth < 95/100*window.innerWidth) main.textContent += input.value;
+            if(main.offsetWidth < 95/100*window.innerWidth) main.textContent == input.value;
             else shake();
         }
     }
-    input.value = "";
 })
