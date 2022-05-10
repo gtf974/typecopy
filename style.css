@@ -22,12 +22,11 @@ body{
     left: 1px;
     height:0;
     width:0;
-    z-index:2;
 }
 
 #app{
     position:relative;
-    z-index:5;
+    background-color: black;
 }
 
 #copied{
@@ -86,7 +85,6 @@ body{
     content:"_";
     font-size: smaller;
     animation: blink_effect 1s infinite;
-    z-index:12;
 }
 
 @keyframes blink_effect {
