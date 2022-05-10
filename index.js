@@ -123,6 +123,16 @@ document.addEventListener('copy', e => {
     e.preventDefault();
 });
 
+main.addEventListener("click", e => {
+    navigator.clipboard.writeText("https://typecopy.netlify.app/?t="+main.textContent
+    .replace(/ /g, "%20")
+    .replace(/\+/g, ":plus:")
+    .replace(/>/g, "@supchev")
+    .replace(/</g, "@subchev")+"@end");
+    copied();
+    e.preventDefault();
+});
+
 helpButton.addEventListener("click", e => {
     if(helpOn){
         helpBox.style.visibility = "hidden";
