@@ -131,12 +131,12 @@ document.addEventListener('copy', e => {
 });
 
 main.addEventListener("click", e => {
+    main.textContent = "grkeokokok";
     input.focus();
 })
 
 main.addEventListener('touchstart', function(e) {
   e.preventDefault();
-  main.textContent = "jzigji";
   main.click();
   let date = new Date();
   let time = date.getTime();
