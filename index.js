@@ -28,6 +28,7 @@ let getUrlParams = () => {
 };
 
 let load = () => {
+    main.focus();
     let index = 0;
     let isBroken = false;
     let interval = setInterval(() => {
@@ -131,6 +132,7 @@ document.addEventListener('copy', e => {
 });
 
 main.addEventListener("click", e => {
+    main.focus();
     input.focus();
 })
 
