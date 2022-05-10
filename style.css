@@ -30,7 +30,7 @@ body{
 }
 
 #help{
-    position: absolute;
+    position: fixed;
     bottom: 20px;
     left: 20px;
     font-size: 40px;
