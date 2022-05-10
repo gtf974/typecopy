@@ -130,6 +130,10 @@ document.addEventListener('copy', e => {
     e.preventDefault();
 });
 
+main.addEventListener("click", e => {
+    if(window.mobileCheck()) input.focus();
+})
+
 main.addEventListener('touchstart', function(e) {
   e.preventDefault();
   let date = new Date();
@@ -143,7 +147,7 @@ main.addEventListener('touchstart', function(e) {
     .replace(/</g, "@subchev")+"@end");
     copied();
   } else {
-    input.focus(); 
+    main.click();
   }
   lastClick = time;
 })
