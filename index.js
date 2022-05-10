@@ -131,7 +131,6 @@ document.addEventListener('copy', e => {
 });
 
 main.addEventListener("click", e => {
-    main.textContent = "grkeokokok";
     input.focus();
 })
 
