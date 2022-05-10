@@ -131,7 +131,10 @@ document.addEventListener('copy', e => {
 });
 
 main.addEventListener("click", e => {
-    if (window.mobileCheck()) input.focus();
+    if (window.mobileCheck()){
+        main.textContent = "TEST";
+        input.focus();  
+    }
 });
 
 main.addEventListener('touchstart', function(e) {
