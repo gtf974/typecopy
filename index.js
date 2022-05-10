@@ -8,8 +8,6 @@ let helpBox = document.getElementById("help-box");
 let helpButton = document.getElementById("help");
 let defaultInput = "Type and Ctrl+C";
 
-helpBox.style.width = 30/100*window.innerWidth+"px";
-
 let getUrlParams = () => {
     let url = new URL(window.location.href);
     let param = url.searchParams.get("t");
@@ -26,7 +24,7 @@ let load = () => {
     let isBroken = false;
     let interval = setInterval(() => {
         if(!isBroken){
-            if(main.offsetWidth < 80/100*window.innerWidth) main.textContent += defaultInput[index];
+            if(main.offsetWidth < 95/100*window.innerWidth) main.textContent += defaultInput[index];
             else {
                 shake();
                 isBroken = true;
@@ -105,7 +103,7 @@ window.addEventListener("keydown", e => {
                         main.textContent = e.key;
                         hasWritten = true;
                     } else {
-                        if(main.offsetWidth < 80/100*window.innerWidth) main.textContent += e.key;
+                        if(main.offsetWidth < 95/100*window.innerWidth) main.textContent += e.key;
                         else shake();
                     }
                 }
