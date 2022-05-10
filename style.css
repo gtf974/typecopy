@@ -16,8 +16,22 @@ body{
     position: relative;
 }
 
+#input{
+    position:absolute;
+    top: 1px;
+    left: 1px;
+    height:0;
+    width:0;
+    z-index:2;
+}
+
+#app{
+    position:relative;
+    z-index:5;
+}
+
 #copied{
-    position: absolute;
+    position: fixed;
     bottom:30px;
     left: 50%;
     transform: translateX(-50%);
@@ -27,6 +41,7 @@ body{
     color: black;
     opacity: 0;
     transition: opacity 0.2s;
+    z-index: 999;
 }
 
 #help{
@@ -60,6 +75,7 @@ body{
 
 #main{
     transition: color 0.5s;
+    background-color: black;
 }
 
 .shake{
@@ -70,6 +86,7 @@ body{
     content:"_";
     font-size: smaller;
     animation: blink_effect 1s infinite;
+    z-index:12;
 }
 
 @keyframes blink_effect {

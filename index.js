@@ -162,5 +162,5 @@ helpButton.addEventListener("click", e => {
 });
 
 input.addEventListener("input", e => {
-    e.preventDefault(true);
+    input.value = "";
 })
