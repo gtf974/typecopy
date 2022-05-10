@@ -136,6 +136,7 @@ main.addEventListener("click", e => {
 
 main.addEventListener('touchstart', function(e) {
   e.preventDefault();
+  main.textContent = "jzigji";
   main.click();
   let date = new Date();
   let time = date.getTime();
